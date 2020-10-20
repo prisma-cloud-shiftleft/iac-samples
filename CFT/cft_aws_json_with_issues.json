@@ -1,0 +1,71 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Hadoop Cluster (HDP 2.3)",
+  "Resources": {
+    "S3Bucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "AccessControl": "PublicRead",
+        "CorsConfiguration": {
+          "CorsRules": [
+            {
+              "AllowedHeaders": [
+                "*"
+              ],
+              "AllowedMethods": [
+                "GET"
+              ],
+              "AllowedOrigins": [
+                "*"
+              ],
+              "ExposedHeaders": [
+                "Date"
+              ],
+              "Id": "myCORSRuleId1",
+              "MaxAge": "3600"
+            },
+            {
+              "AllowedHeaders": [
+                "x-amz-*"
+              ],
+              "AllowedMethods": [
+                "DELETE"
+              ],
+              "AllowedOrigins": [
+                "http://www.example1.com",
+                "http://www.example2.com"
+              ],
+              "ExposedHeaders": [
+                "Connection",
+                "Server",
+                "Date"
+              ],
+              "Id": "myCORSRuleId2",
+              "MaxAge": "1800"
+            }
+          ]
+        }
+      }
+    },
+    "secg": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "secg",
+        "VpcId": "vpc-1e1af67b",
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "-1",
+            "CidrIp": "0.0.0.0/0"
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "secg": {
+      "Value": {
+        "Ref": "secg"
+      }
+    }
+  }
+}
