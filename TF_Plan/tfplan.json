@@ -1,0 +1,254 @@
+{
+  "format_version": "0.1",
+  "terraform_version": "0.12.24",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "docker_container.nginx",
+          "mode": "managed",
+          "type": "docker_container",
+          "name": "nginx",
+          "provider_name": "docker",
+          "schema_version": 2,
+          "values": {
+            "attach": false,
+            "capabilities": [],
+            "cpu_set": null,
+            "cpu_shares": null,
+            "destroy_grace_seconds": null,
+            "devices": [],
+            "dns": null,
+            "dns_opts": null,
+            "dns_search": null,
+            "domainname": null,
+            "group_add": null,
+            "healthcheck": [],
+            "host": [],
+            "links": null,
+            "log_driver": "json-file",
+            "log_opts": null,
+            "logs": false,
+            "max_retry_count": null,
+            "memory": null,
+            "memory_swap": null,
+            "mounts": [],
+            "must_run": true,
+            "name": "tutorial",
+            "network_alias": null,
+            "network_mode": null,
+            "networks": null,
+            "networks_advanced": [],
+            "pid_mode": null,
+            "ports": [
+              {
+                "external": 8000,
+                "internal": 80,
+                "ip": "0.0.0.0",
+                "protocol": "tcp"
+              }
+            ],
+            "privileged": null,
+            "publish_all_ports": null,
+            "read_only": false,
+            "restart": "no",
+            "rm": false,
+            "start": true,
+            "sysctls": null,
+            "tmpfs": null,
+            "ulimit": [],
+            "upload": [],
+            "user": null,
+            "userns_mode": null,
+            "volumes": [],
+            "working_dir": null
+          }
+        },
+        {
+          "address": "docker_image.nginx",
+          "mode": "managed",
+          "type": "docker_image",
+          "name": "nginx",
+          "provider_name": "docker",
+          "schema_version": 0,
+          "values": {
+            "keep_locally": false,
+            "name": "nginx:latest",
+            "pull_trigger": null,
+            "pull_triggers": null
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "docker_container.nginx",
+      "mode": "managed",
+      "type": "docker_container",
+      "name": "nginx",
+      "provider_name": "docker",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "attach": false,
+          "capabilities": [],
+          "cpu_set": null,
+          "cpu_shares": null,
+          "destroy_grace_seconds": null,
+          "devices": [],
+          "dns": null,
+          "dns_opts": null,
+          "dns_search": null,
+          "domainname": null,
+          "group_add": null,
+          "healthcheck": [],
+          "host": [],
+          "links": null,
+          "log_driver": "json-file",
+          "log_opts": null,
+          "logs": false,
+          "max_retry_count": null,
+          "memory": null,
+          "memory_swap": null,
+          "mounts": [],
+          "must_run": true,
+          "name": "tutorial",
+          "network_alias": null,
+          "network_mode": null,
+          "networks": null,
+          "networks_advanced": [],
+          "pid_mode": null,
+          "ports": [
+            {
+              "external": 8000,
+              "internal": 80,
+              "ip": "0.0.0.0",
+              "protocol": "tcp"
+            }
+          ],
+          "privileged": null,
+          "publish_all_ports": null,
+          "read_only": false,
+          "restart": "no",
+          "rm": false,
+          "start": true,
+          "sysctls": null,
+          "tmpfs": null,
+          "ulimit": [],
+          "upload": [],
+          "user": null,
+          "userns_mode": null,
+          "volumes": [],
+          "working_dir": null
+        },
+        "after_unknown": {
+          "bridge": true,
+          "capabilities": [],
+          "command": true,
+          "container_logs": true,
+          "devices": [],
+          "entrypoint": true,
+          "env": true,
+          "exit_code": true,
+          "gateway": true,
+          "healthcheck": [],
+          "host": [],
+          "hostname": true,
+          "id": true,
+          "image": true,
+          "ip_address": true,
+          "ip_prefix_length": true,
+          "ipc_mode": true,
+          "labels": true,
+          "mounts": [],
+          "network_data": true,
+          "networks_advanced": [],
+          "ports": [
+            {}
+          ],
+          "shm_size": true,
+          "ulimit": [],
+          "upload": [],
+          "volumes": []
+        }
+      }
+    },
+    {
+      "address": "docker_image.nginx",
+      "mode": "managed",
+      "type": "docker_image",
+      "name": "nginx",
+      "provider_name": "docker",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "keep_locally": false,
+          "name": "nginx:latest",
+          "pull_trigger": null,
+          "pull_triggers": null
+        },
+        "after_unknown": {
+          "id": true,
+          "latest": true
+        }
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "docker_container.nginx",
+          "mode": "managed",
+          "type": "docker_container",
+          "name": "nginx",
+          "provider_config_key": "docker",
+          "expressions": {
+            "image": {
+              "references": [
+                "docker_image.nginx"
+              ]
+            },
+            "name": {
+              "constant_value": "tutorial"
+            },
+            "ports": [
+              {
+                "external": {
+                  "constant_value": 8000
+                },
+                "internal": {
+                  "constant_value": 80
+                }
+              }
+            ]
+          },
+          "schema_version": 2
+        },
+        {
+          "address": "docker_image.nginx",
+          "mode": "managed",
+          "type": "docker_image",
+          "name": "nginx",
+          "provider_config_key": "docker",
+          "expressions": {
+            "keep_locally": {
+              "constant_value": false
+            },
+            "name": {
+              "constant_value": "nginx:latest"
+            }
+          },
+          "schema_version": 0
+        }
+      ]
+    }
+  }
+}
