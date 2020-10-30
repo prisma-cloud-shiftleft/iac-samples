@@ -1,0 +1,24 @@
+{
+	"id": "064d974c-383e-47fe-b9cc-8bab0b6c8bff",
+	"name": "<api server>.prismacloud.io",
+	"values": [
+		{
+			"key": "server",
+			"value": "api2slqa.k8sdev",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-10-28T17:57:27.024Z",
+	"_postman_exported_using": "Postman/7.34.0"
+}
