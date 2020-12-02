@@ -10,7 +10,7 @@ spec:
   replicas: 3
 
   # 2. How do want to update the pods?
-  strategy: Recreate
+  # strategy: Recreate
 
   # 3. Which pods are managed by this deployment?
   selector:
