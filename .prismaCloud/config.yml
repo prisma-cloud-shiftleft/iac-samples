@@ -1,7 +1,7 @@
 # Template type. The valid values are TF, CFT, K8S
-# template_type: CFT
+template_type: CFT
 # template_type: K8S
-template_type: TF
+# template_type: TF
 
 # TF version
 # terraform_version: 0.11
@@ -10,11 +10,13 @@ terraform_version: 0.12
 
 template_parameters:
   variable_files:
+  - './CFT/cft_variables.json'
   - './TF/tf12_variable_files/smelks.tfvars'
-  - './TF/tf12_variable_files_nested/network/smelks.tfvars'
+  - './TF/tf12_nested_variable_files/network/smelks.tfvars'
   variables:
     cidr: 0.0.0.0/0
     acl: public-read-write
+    AccessControl: PublicRead
 
 tags:
 - Org:Engineering
