@@ -1,0 +1,28 @@
+
+# Specify the template type. Valid values are as follows.
+# - For Terraform: TF
+# - For AWS CloudFormation: CFT
+# - For Kubernetes: K8S
+
+template_type: TF
+
+# Valid values for terraform_version are 0.11 or 0.12.
+
+terraform_version: 0.12
+
+# If  terraform_version is 0.12, then terraform_012_parameters is required.
+# The value of terraform_012_parameters is an array of root_modules. The value for root_module is relative to your repository branch root directory.
+# Each root module can have:
+# - variable_files, which is an array of variable file names relative to your repository branch root directory
+# - variables, which is an array of name/value pairs that identify the input variables for the module
+
+terraform_012_parameters:
+- root_module: scan/rich-value-types/
+  variables:
+  - name: check
+    value: public-read-write
+  - name: varName2
+    value: varValue2
+- root_module: scan/for-expressions/
+  variable_files:
+  - scan/rich-value-types/expressions/variables.tf
