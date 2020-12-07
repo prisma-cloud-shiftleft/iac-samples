@@ -18,3 +18,11 @@ terraform_011_parameters:
   variable_values:
   - name: check
     value: public-read-write
+    
+# Prisma Cloud Tags
+# tags is an array of labels that enable you to organize your resources
+# with these key/value pairs in Prisma Cloud
+
+tags:
+- Org:Engineering
+- Team:Shift_Left
