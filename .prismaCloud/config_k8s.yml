@@ -5,3 +5,11 @@
 # For Kubernetes: K8S
 
 template_type: K8S
+
+# Prisma Cloud Tags
+# tags is an array of labels that enable you to organize your resources
+# with these key/value pairs in Prisma Cloud
+
+tags:
+- Org:Engineering
+- Team:Shift_Left
