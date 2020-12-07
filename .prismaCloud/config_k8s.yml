@@ -1,0 +1,7 @@
+
+# Specify the template type. Valid values are as follows.
+# For Terraform: TF
+# For AWS CloudFormation: CFT
+# For Kubernetes: K8S
+
+template_type: K8S
