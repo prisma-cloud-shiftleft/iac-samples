@@ -26,3 +26,11 @@ terraform_012_parameters:
 - root_module: scan/for-expressions/
   variable_files:
   - scan/rich-value-types/expressions/variables.tf
+
+# Prisma Cloud Tags
+# tags is an array of labels that enable you to organize your resources
+# with these key/value pairs in Prisma Cloud
+
+tags:
+- Org:Engineering
+- Team:Shift_Left
