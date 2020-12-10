@@ -19,7 +19,6 @@ template_parameters:
   variables:
     cidr: 0.0.0.0/0
     acl: public-read-write
-    AccessControl: PublicRead
 
 # Define tags to identify your particular scan. You can use these tags to search the scan details on the Prisma Cloud.
 tags:
