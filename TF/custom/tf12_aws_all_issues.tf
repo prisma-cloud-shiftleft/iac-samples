@@ -369,15 +369,3 @@ resource "aws_iam_policy_attachment" "test-attach" {
     "test-group"]
   policy_arn = "arn:aws:kms:us-west-2:111122223333:key"
 }
-
-// 18. AWS EKS unsupported Master node version (high)
-// $.resource[*].aws_eks_cluster[*].*[*].version anyStartWith 1.9.
-resource "aws_eks_cluster" "example" {
-  name = "example"
-  role_arn = data.aws_iam_role.ecs_task_execution_role.arn
-  vpc_config {
-    subnet_ids = [
-      data.aws_subnet_ids.example.id]
-  }
-  version = "1.9.9"
-}
